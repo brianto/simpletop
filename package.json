@@ -1,0 +1,28 @@
+{
+  "name": "simpletop",
+  "version": "1.0.0",
+  "description": "bare-bones web components desktop",
+  "keywords": [
+    "web-component",
+    "desktop"
+  ],
+  "author": "",
+  "license": "MIT",
+  "homepage": "https://github.com/brianto/simpletop",
+  "bugs": {
+    "url": "https://github.com/brianto/simpletop/issues"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brianto/simpletop.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-bower": "0.0.13"
+  }
+}

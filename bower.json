@@ -1,0 +1,25 @@
+{
+  "name": "simpletop",
+  "description": "bare-bones web components desktop",
+  "main": "index.js",
+  "authors": [
+    "Brian To <bxt5647@rit.edu>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "web-component",
+    "desktop"
+  ],
+  "homepage": "https://github.com/brianto/simpletop",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lodash": "^4.14.1"
+  }
+}

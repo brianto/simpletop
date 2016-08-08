@@ -24,9 +24,10 @@
   "devDependencies": {
     "del": "^2.2.1",
     "gulp": "^3.9.1",
-    "gulp-bower": "0.0.13",
     "gulp-clean-css": "^2.0.12",
     "gulp-compile-handlebars": "^0.6.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-crisper": "^1.1.0",
     "gulp-debug": "^2.1.2",
     "gulp-htmlmin": "^2.0.0",
     "gulp-jshint": "^2.0.1",
@@ -34,10 +35,12 @@
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^2.0.0",
+    "gulp-vulcanize": "^6.1.0",
     "gulp-watch": "^4.3.9",
     "gulp-webserver": "^0.9.1",
     "jshint": "^2.9.2",
     "jshint-stylish": "^2.2.0",
+    "main-bower-files": "^2.13.1",
     "vinyl-paths": "^2.1.0"
   }
 }

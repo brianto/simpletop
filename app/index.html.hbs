@@ -4,13 +4,15 @@
   <title>simpletop</title>
 
   <!-- Style -->
-  <style>{{> style.css }}</style>
+  <style>{{ raw "bower.css" }}</style>
+  <style>{{ raw "style.css" }}</style>
 
   <!-- JavaScript -->
-  <script type="text/javascript">{{> application.js }}</script>
+  <script type="text/javascript">{{ raw "bower.js" }}</script>
+  <script type="text/javascript">{{ raw "application.js" }}</script>
 
   <!-- Imports -->
-  {{> imports.html }}
+  {{ raw "imports.html" }}
 </head>
 <body>
   <p>Hello!</p>

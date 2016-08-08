@@ -34,6 +34,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^2.0.0",
+    "gulp-watch": "^4.3.9",
+    "gulp-webserver": "^0.9.1",
     "jshint": "^2.9.2",
     "jshint-stylish": "^2.2.0",
     "vinyl-paths": "^2.1.0"

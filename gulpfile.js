@@ -3,6 +3,8 @@ const gulp = require('gulp');
 const debug = require('gulp-debug');
 const vinyl = require('vinyl-paths');
 const stylish = require('jshint-stylish');
+const watch = require('gulp-watch'); // TODO make server watch files and rebuild
+const webserver = require('gulp-webserver');
 
 const del = require('del');
 const handlebars = require('gulp-compile-handlebars');
@@ -95,11 +97,28 @@ gulp.task('compile:page', [
     // No longer handlebars, remove extension
     .pipe(rename({ extname: '' }))
 
-    .pipe(gulp.dest(BUILD_APP))
+    .pipe(gulp.dest(BUILD))
+    ;
+});
+
+gulp.task('compile', [
+  'compile:page',
+]);
+
+gulp.task('server', [
+  'compile',
+], () => {
+  return gulp.src(BUILD)
+    .pipe(webserver({
+      livereload: {
+        enable: true,
+        filter: filename => filename.match(/.html/),
+      },
+    }))
     ;
 });
 
 gulp.task('default', [
-  'compile:page',
+  'compile',
 ]);
 

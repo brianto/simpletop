@@ -20,7 +20,7 @@ const stylish = require('jshint-stylish');
 const uglify = require('gulp-uglify');
 const vinyl = require('vinyl-paths');
 const vulcanize = require('gulp-vulcanize');
-const watch = require('gulp-watch'); // TODO make server watch files and rebuild
+const watch = require('gulp-watch');
 const webserver = require('gulp-webserver');
 
 // Underlying handlebars object
@@ -287,7 +287,7 @@ gulp.task('compile:index', [
     ;
 });
 
-gulp.task('compile', [
+gulp.task('compile:polymer', [
   'compile:index',
 ], () => {
   return gulp.src([ `${BUILD_APP}/index.html` ])
@@ -309,11 +309,25 @@ gulp.task('compile', [
     ;
 });
 
+gulp.task('compile', [
+  'compile:polymer',
+]);
+
 gulp.task('server', [
   'compile',
 ], () => {
+  gulp.watch('app/*', [
+    'compile',
+  ]);
+
+  gulp.watch('components/**/*', [
+    'compile',
+  ]);
+
   return gulp.src(BUILD)
-    .pipe(webserver())
+    .pipe(webserver({
+      livereload: true,
+    }))
     ;
 });
 

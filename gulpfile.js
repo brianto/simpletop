@@ -4,7 +4,6 @@ const babel = require('gulp-babel');
 const bower = require('main-bower-files');
 const cleancss = require('gulp-clean-css');
 const concat = require('gulp-concat');
-const crisper = require('gulp-crisper');
 const debug = require('gulp-debug');
 const del = require('del');
 const fs = require('fs');
@@ -23,7 +22,8 @@ const vulcanize = require('gulp-vulcanize');
 const watch = require('gulp-watch');
 const webserver = require('gulp-webserver');
 
-// Underlying handlebars object
+// Handlebars class
+// http://handlebarsjs.com/reference.html
 const Handlebars = handlebars.Handlebars;
 const HANDLEBARS_EXT = 'hbs';
 const HTML_EXT = 'html';
@@ -241,8 +241,6 @@ gulp.task('compile:components', [
           file.basename = path.basename(component);
           file.extname = `.${HTML_EXT}`;
         }))
-
-        // .pipe(gulp.dest(BUILD_APP))
         ;
     })
     ;
@@ -297,12 +295,6 @@ gulp.task('compile:polymer', [
     .pipe(vulcanize({
       inlineScripts: true,
       inlineCss: true,
-    }))
-
-    // Crisper
-    // https://github.com/Polymer/crisper
-    .pipe(crisper({
-      scriptInHead: false,
     }))
 
     .pipe(gulp.dest(BUILD))

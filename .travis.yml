@@ -1,0 +1,32 @@
+# node.js version taken from .nvmrc
+# https://docs.travis-ci.com/user/languages/javascript-with-nodejs
+language: node_js
+
+install:
+  # Node dependencies
+  - npm install
+
+  # Bower dependencies
+  - npm install -g bower
+  - bower install
+
+script:
+  - gulp compile
+
+after_success:
+  - cp dist/index.html index.html
+
+addons:
+
+  # S3 Artifacts
+  # https://docs.travis-ci.com/user/uploading-artifacts/
+  #
+  # Credentials, buckets, etc., are configured in
+  # https://travis-ci.org/brianto/simpletop/settings
+  artifacts:
+    target_paths: /
+    paths:
+      - index.html
+    permissions: public-read
+    cache_control: public; max-age=86400
+
